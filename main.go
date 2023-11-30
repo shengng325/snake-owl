@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 
 	"snake/controller"
@@ -20,6 +20,6 @@ func main() {
 	r.HandleFunc("/new", s.NewGame).Methods("GET")
 	r.HandleFunc("/validate", s.ValidateGame).Methods("POST")
 
-	fmt.Println("Listening on port 8808")
+	log.Println("Listening on port 8808")
 	http.ListenAndServe(":8808", r)
 }
