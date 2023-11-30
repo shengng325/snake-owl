@@ -18,10 +18,10 @@ func TestValidateOutOfBounds(t *testing.T) {
 	state1.Height = 10
 	state1.Width = 10
 	state1.SnakePosTrace = []dto.SnakePos{
+		{X: 8, Y: 7},
 		{X: 8, Y: 8},
 		{X: 8, Y: 9},
 		{X: 8, Y: 10},
-		{X: 8, Y: 11},
 	}
 	testCases = append(testCases, testArgs{state1, true})
 	// case 2
@@ -29,10 +29,10 @@ func TestValidateOutOfBounds(t *testing.T) {
 	state2.Height = 10
 	state2.Width = 10
 	state2.SnakePosTrace = []dto.SnakePos{
+		{X: 8, Y: 7},
 		{X: 8, Y: 8},
 		{X: 8, Y: 9},
-		{X: 8, Y: 10},
-		{X: 9, Y: 10},
+		{X: 9, Y: 9},
 	}
 	testCases = append(testCases, testArgs{state2, false})
 	for _, tc := range testCases {

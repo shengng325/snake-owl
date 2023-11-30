@@ -27,7 +27,7 @@ func validateOutOfBounds(state dto.ValidationDto) (error, int) {
 	maxWidth := state.Width
 	maxHeight := state.Height
 	for _, pos := range state.SnakePosTrace {
-		if pos.X < 0 || pos.X > maxWidth || pos.Y < 0 || pos.Y > maxHeight {
+		if pos.X < 0 || pos.X >= maxWidth || pos.Y < 0 || pos.Y >= maxHeight {
 			return errors.New("ouch! the snake hit the bounds!"), http.StatusTeapot
 		}
 	}
